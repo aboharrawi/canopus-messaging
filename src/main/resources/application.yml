@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: canopus-messaging
+
+  kafka:
+    consumer:
+      group-id: canopus-streaming
+      auto-offset-reset: earliest
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+    bootstrap-servers: canopus-kafka:9092
+
+
+eureka:
+  client:
+    registerWithEureka: false
+    service-url:
+      defaultZone: http://canopus-discovery:8761/eureka
+
+server:
+  port: 8080
